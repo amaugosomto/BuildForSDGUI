@@ -1,8 +1,5 @@
 $(document).ready(function () {
-  $("select").formSelect();
   $("#getEstimate").on("click", getEstimate);
-  $(".tabs").tabs();
-  $("#impactClick").click();
 });
 
 function getEstimate() {

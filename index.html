@@ -7,8 +7,8 @@
   <meta name="Description" content="Author: Somto Amaugo, For: BuildForSDG front end task">
   <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="index.css">
   <title>BuildFOrSDG UI</title>
 </head>
@@ -17,171 +17,201 @@
 
   <main id="main-content">
     <header>
-      <h5 class="header white-text">
-        #BuildForSDG <span class="red white-text">UI</span>
+      <h5 class="header text-white">
+        #BuildForSDG <span class="red text-white">UI</span>
       </h5>
     </header>
 
-    <div class="container row">
-      <div class="col s12 card z-depth-3">
-        <div class="row">
-          <div class="col s12 m6">
-            <div class="input-field">
-              <input id="population" data-population type="text" class="validate">
-              <label class="black-text" for="population">Population</label>
+    <div class="main-container">
+      <div class=" card shadow">
+        <div class="row mt-4">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label for="population">Population</label>
+                  <input type="text" class="form-control" data-population class="form-control" id="population">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label for="timeToElapse">Time to Elaspe</label>
+                  <input id="timeToElapse" class="form-control" data-time-to-elapse type="text">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label for="reportedCases">Reported Cases</label>
+                  <input class="form-control" id="reportedCases" data-reported-cases type="text">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label for="totalHospitalBeds">Total Hospital Beds</label>
+                  <input class="form-control" id="totalHospitalBeds" data-total-hospital-beds type="text">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="periodType">Population</label>
+                  <select name="" id="periodType" data-period-Type class="form-control">
+                    <option value="">Choose your option</option>
+                    <option value="days">days</option>
+                    <option value="weeks">weeks</option>
+                    <option value="months">months</option>
+                  </select>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col s12 m6">
-            <div class="input-field">
-              <input id="timeToElapse" data-time-to-elapse type="text" class="validate">
-              <label class="black-text" for="timeToElapse">Time to Elapse</label>
-            </div>
-          </div>
-          <div class="col s12 m6">
-            <div class="input-field">
-              <input id="reportedCases" data-reported-cases type="text" class="validate">
-              <label class="black-text" for="reportedCases">Reported Cases</label>
-            </div>
-          </div>
-          <div class="col s12 m6">
-            <div class="input-field">
-              <input id="totalHospitalBeds" data-total-hospital-beds type="text" class="validate">
-              <label class="black-text" for="totalHospitalBeds">Total Hospital Beds</label>
-            </div>
-          </div>
-          <div class="col s12">
-            <div class="input-field">
-              <select id="periodType" data-period-Type>
-                <option value="" disabled selected>Choose your option</option>
-                <option value="days">days</option>
-                <option value="weeks">weeks</option>
-                <option value="months">months</option>
-              </select>
-              <label class="black-text" for="periodType">Period Type Select</label>
-            </div>
-          </div>
 
+          </div>
         </div>
-        <button class="btn waves-effect waves-light purple" id="getEstimate" type="submit" data-go-estimate>
-          Get Estimations
-          <i class="material-icons right">send</i>
-        </button>
+        <div class="d-flex justify-content-end">
+          <button class="btn" id="getEstimate" type="submit" data-go-estimate>
+            Get Estimations
+          </button>
+        </div>
       </div>
+
     </div>
 
-    <div id="estimationModal" class="modal">
-      <div class="modal-content">
-        <div class="row">
-          <div class="col s12" id="tabParent">
-            <ul class="tabs">
-              <li class="tab col s3"><a class="active" href="#impact">Impact</a></li>
-              <li class="tab col s3"><a href="#severe">Severe Impact</a></li>
+    <div class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">COVID-19 Estimations</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#impact" role="tab"
+                  aria-controls="home" aria-selected="true">IMPACT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#severe" role="tab" aria-controls="profile"
+                  aria-selected="false">SEVERE IMPACT</a>
+              </li>
             </ul>
-          </div>
-
-          <div id="impact" class="col s12">
-            <div class="row">
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="currentlyInfected" placeholder="" value="" disabled type="text" class="validate">
-                  <label class="black-text" for="currentlyInfected">Currently Infected</label>
+            <div class="tab-content mt-4" id="myTabContent">
+              <div class="tab-pane fade show active" id="impact" role="tabpanel" aria-labelledby="home-tab">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="currentlyInfected">Currently Infected</label>
+                      <input id="currentlyInfected" class="form-control" disabled type="text">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="infectionsByRequestedTime">Infections By RequestedTime</label>
+                      <input id="infectionsByRequestedTime" class="form-control" disabled type="text">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="severeCasesByRequestedTime">Severe Cases By Requested Time</label>
+                      <input id="severeCasesByRequestedTime" placeholder="" disabled type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="hospitalBedsByRequestedTime">Hospital Beds By Requested Time</label>
+                      <input id="hospitalBedsByRequestedTime" placeholder="" disabled type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="casesForICUByRequestedTime">Cases For ICU By RequestedTime</label>
+                      <input id="casesForICUByRequestedTime" placeholder="" disabled type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="casesForVentilatorsByRequestedTime">Cases For Ventilators By
+                        RequestedTime</label>
+                      <input id="casesForVentilatorsByRequestedTime" placeholder="" disabled type="text"
+                        class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="dollarsInFlight">Dollars In Flight</label>
+                      <input id="dollarsInFlight" placeholder="" disabled type="text" class="form-control">
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="infectionsByRequestedTime" placeholder="" disabled type="text" class="validate">
-                  <label class="black-text" for="infectionsByRequestedTime">Infections By RequestedTime</label>
-                </div>
-              </div>
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="severeCasesByRequestedTime" placeholder="" disabled type="text" class="validate">
-                  <label class="black-text" for="severeCasesByRequestedTime">Severe Cases By Requested Time</label>
-                </div>
-              </div>
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="hospitalBedsByRequestedTime" placeholder="" disabled type="text" class="validate">
-                  <label class="black-text" for="hospitalBedsByRequestedTime">Hospital Beds By Requested Time</label>
-                </div>
-              </div>
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="casesForICUByRequestedTime" placeholder="" disabled type="text" class="validate">
-                  <label class="black-text" for="casesForICUByRequestedTime">Cases For ICU By RequestedTime</label>
-                </div>
-              </div>
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="casesForVentilatorsByRequestedTime" placeholder="" disabled type="text" class="validate">
-                  <label class="black-text"
-                    for="casesForVentilatorsByRequestedTime">Cases For Ventilators By RequestedTime</label>
-                </div>
-              </div>
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="dollarsInFlight" placeholder="" disabled type="text" class="validate">
-                  <label class="black-text" for="dollarsInFlight">Dollars In Flight</label>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div id="severe" class="col s12">
-            <div class="row">
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="severecurrentlyInfected" placeholder="" disabled type="text" class="validate">
-                  <label class="black-text" for="severecurrentlyInfected">Currently Infected</label>
-                </div>
-              </div>
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="severeinfectionsByRequestedTime" placeholder="" disabled type="text" class="validate">
-                  <label class="black-text" for="severeinfectionsByRequestedTime">Infections By RequestedTime</label>
-                </div>
-              </div>
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="severesevereCasesByRequestedTime" placeholder="" disabled type="text" class="validate">
-                  <label class="black-text" for="severesevereCasesByRequestedTime">Severe Cases By Requested Time</label>
-                </div>
-              </div>
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="severehospitalBedsByRequestedTime" placeholder="" disabled type="text" class="validate">
-                  <label class="black-text" for="severehospitalBedsByRequestedTime">Hospital Beds By Requested Time</label>
-                </div>
-              </div>
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="severecasesForICUByRequestedTime" placeholder="" disabled type="text" class="validate">
-                  <label class="black-text" for="severecasesForICUByRequestedTime">Cases For ICU By RequestedTime</label>
-                </div>
-              </div>
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="severecasesForVentilatorsByRequestedTime" placeholder="" disabled type="text" class="validate">
-                  <label class="black-text" for="severecasesForVentilatorsByRequestedTime">Cases For Ventilators By
-                    RequestedTime</label>
-                </div>
-              </div>
-              <div class="col s12 m6">
-                <div class="input-field">
-                  <input id="severedollarsInFlight" placeholder="" disabled type="text" class="validate">
-                  <label class="black-text" for="severedollarsInFlight">Dollars In Flight</label>
+              <div class="tab-pane fade" id="severe" role="tabpanel" aria-labelledby="severe-tab">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="severecurrentlyInfected">Currently Infected</label>
+                      <input id="severecurrentlyInfected" placeholder="" disabled type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="severeinfectionsByRequestedTime">Infections By
+                        RequestedTime</label>
+                      <input id="severeinfectionsByRequestedTime" placeholder="" disabled type="text"
+                        class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="severesevereCasesByRequestedTime">Severe Cases By Requested
+                        Time</label>
+                      <input id="severesevereCasesByRequestedTime" placeholder="" disabled type="text"
+                        class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="severehospitalBedsByRequestedTime">Hospital Beds By Requested
+                        Time</label>
+                      <input id="severehospitalBedsByRequestedTime" placeholder="" disabled type="text"
+                        class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="severecasesForICUByRequestedTime">Cases For ICU By
+                        RequestedTime</label>
+                      <input id="severecasesForICUByRequestedTime" placeholder="" disabled type="text"
+                        class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="severecasesForVentilatorsByRequestedTime">Cases For Ventilators
+                        By
+                        RequestedTime</label>
+                      <input id="severecasesForVentilatorsByRequestedTime" placeholder="" disabled type="text"
+                        class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="form-group">
+                      <label class="text-dark" for="severedollarsInFlight">Dollars In Flight</label>
+                      <input id="severedollarsInFlight" placeholder="" disabled type="text" class="form-control">
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </main>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
   <script src="./estimator.js"></script>
   <script src="./index.js"></script>
 </body>

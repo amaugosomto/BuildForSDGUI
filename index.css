@@ -6,6 +6,9 @@
     background-size: cover !important;
     min-height: 100vh;
 }
+.main-container{
+    margin: 0 400px;
+}
 .header{
     font-family: 'Gotu', sans-serif;
     font-weight: 600;
@@ -17,14 +20,15 @@
     padding: 0 .7rem;
     border-radius: 50%;
 }
-button.purple{
+button.btn{
     margin-bottom: 1rem;
-    float: right;
+    background-color: #5F40A8;
+    color: #fff;
     font-weight: 600;
 }
 .card{
     padding: 1rem 5rem !important;
 }
-#tabParent{
-    margin-bottom: 2rem;
+.red{
+    background-color: #DC143C;
 }
