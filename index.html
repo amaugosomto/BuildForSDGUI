@@ -5,8 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="Description" content="Author: Somto Amaugo, For: BuildForSDG front end task">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/bootstrap copy.css">
   <link rel="stylesheet" href="index.css">
   <title>BuildFOrSDG UI</title>
 </head>
@@ -83,120 +82,104 @@
             </button>
           </div>
           <div class="modal-body">
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#impact" role="tab"
-                  aria-controls="home" aria-selected="true">IMPACT</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#severe" role="tab" aria-controls="profile"
-                  aria-selected="false">SEVERE IMPACT</a>
-              </li>
-            </ul>
-            <div class="tab-content mt-4" id="myTabContent">
-              <div class="tab-pane fade show active" id="impact" role="tabpanel" aria-labelledby="home-tab">
-                <div class="row">
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="currentlyInfected">Currently Infected</label>
-                      <input id="currentlyInfected" class="form-control" disabled type="text">
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="infectionsByRequestedTime">Infections By RequestedTime</label>
-                      <input id="infectionsByRequestedTime" class="form-control" disabled type="text">
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="severeCasesByRequestedTime">Severe Cases By Requested Time</label>
-                      <input id="severeCasesByRequestedTime" placeholder="" disabled type="text" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="hospitalBedsByRequestedTime">Hospital Beds By Requested Time</label>
-                      <input id="hospitalBedsByRequestedTime" placeholder="" disabled type="text" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="casesForICUByRequestedTime">Cases For ICU By RequestedTime</label>
-                      <input id="casesForICUByRequestedTime" placeholder="" disabled type="text" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="casesForVentilatorsByRequestedTime">Cases For Ventilators By
-                        RequestedTime</label>
-                      <input id="casesForVentilatorsByRequestedTime" placeholder="" disabled type="text"
-                        class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="dollarsInFlight">Dollars In Flight</label>
-                      <input id="dollarsInFlight" placeholder="" disabled type="text" class="form-control">
-                    </div>
-                  </div>
+            <h5>Impact Estimations</h5>
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="currentlyInfected">Currently Infected</label>
+                  <input id="currentlyInfected" class="form-control" disabled type="text">
                 </div>
               </div>
-              <div class="tab-pane fade" id="severe" role="tabpanel" aria-labelledby="severe-tab">
-                <div class="row">
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="severecurrentlyInfected">Currently Infected</label>
-                      <input id="severecurrentlyInfected" placeholder="" disabled type="text" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="severeinfectionsByRequestedTime">Infections By
-                        RequestedTime</label>
-                      <input id="severeinfectionsByRequestedTime" placeholder="" disabled type="text"
-                        class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="severesevereCasesByRequestedTime">Severe Cases By Requested
-                        Time</label>
-                      <input id="severesevereCasesByRequestedTime" placeholder="" disabled type="text"
-                        class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="severehospitalBedsByRequestedTime">Hospital Beds By Requested
-                        Time</label>
-                      <input id="severehospitalBedsByRequestedTime" placeholder="" disabled type="text"
-                        class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="severecasesForICUByRequestedTime">Cases For ICU By
-                        RequestedTime</label>
-                      <input id="severecasesForICUByRequestedTime" placeholder="" disabled type="text"
-                        class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="severecasesForVentilatorsByRequestedTime">Cases For Ventilators
-                        By
-                        RequestedTime</label>
-                      <input id="severecasesForVentilatorsByRequestedTime" placeholder="" disabled type="text"
-                        class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-12 col-md-6">
-                    <div class="form-group">
-                      <label class="text-dark" for="severedollarsInFlight">Dollars In Flight</label>
-                      <input id="severedollarsInFlight" placeholder="" disabled type="text" class="form-control">
-                    </div>
-                  </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="infectionsByRequestedTime">Infections By RequestedTime</label>
+                  <input id="infectionsByRequestedTime" class="form-control" disabled type="text">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="severeCasesByRequestedTime">Severe Cases By Requested Time</label>
+                  <input id="severeCasesByRequestedTime" placeholder="" disabled type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="hospitalBedsByRequestedTime">Hospital Beds By Requested Time</label>
+                  <input id="hospitalBedsByRequestedTime" placeholder="" disabled type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="casesForICUByRequestedTime">Cases For ICU By RequestedTime</label>
+                  <input id="casesForICUByRequestedTime" placeholder="" disabled type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="casesForVentilatorsByRequestedTime">Cases For Ventilators By
+                    RequestedTime</label>
+                  <input id="casesForVentilatorsByRequestedTime" placeholder="" disabled type="text"
+                    class="form-control">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="dollarsInFlight">Dollars In Flight</label>
+                  <input id="dollarsInFlight" placeholder="" disabled type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+            <hr />
+            <h5>Severe Impact Estimations</h5>
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="severecurrentlyInfected">Currently Infected</label>
+                  <input id="severecurrentlyInfected" placeholder="" disabled type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="severeinfectionsByRequestedTime">Infections By
+                    RequestedTime</label>
+                  <input id="severeinfectionsByRequestedTime" placeholder="" disabled type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="severesevereCasesByRequestedTime">Severe Cases By Requested
+                    Time</label>
+                  <input id="severesevereCasesByRequestedTime" placeholder="" disabled type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="severehospitalBedsByRequestedTime">Hospital Beds By Requested
+                    Time</label>
+                  <input id="severehospitalBedsByRequestedTime" placeholder="" disabled type="text"
+                    class="form-control">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="severecasesForICUByRequestedTime">Cases For ICU By
+                    RequestedTime</label>
+                  <input id="severecasesForICUByRequestedTime" placeholder="" disabled type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="severecasesForVentilatorsByRequestedTime">Cases For Ventilators
+                    By
+                    RequestedTime</label>
+                  <input id="severecasesForVentilatorsByRequestedTime" placeholder="" disabled type="text"
+                    class="form-control">
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="form-group">
+                  <label class="text-dark" for="severedollarsInFlight">Dollars In Flight</label>
+                  <input id="severedollarsInFlight" placeholder="" disabled type="text" class="form-control">
                 </div>
               </div>
             </div>

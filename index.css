@@ -32,3 +32,10 @@ button.btn{
 .red{
     background-color: #DC143C;
 }
+.mt-4,
+.my-4 {
+    margin-top: 1.5rem !important;
+}
+.text-white {
+    color: #fff !important;
+}
