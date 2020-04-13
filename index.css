@@ -1,0 +1,31 @@
+#main-content{
+    background: url('https://4.bp.blogspot.com/-fhHbL9J2Gq8/XLy2jKfFDOI/AAAAAAAACvE/Lkxt6tlCdpEZrogiKPoRtmmMzOn1bLnlACLcBGAs/s640/Template%2B4.jpg') no-repeat center fixed !important;
+    -webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    -o-background-size: cover !important;
+    background-size: cover !important;
+    min-height: 100vh;
+}
+.header{
+    font-family: 'Gotu', sans-serif;
+    font-weight: 600;
+    font-size: 30px;;
+    margin-top: 0;
+    padding: 1.9rem 0 2rem 2rem;
+}
+.header span{
+    padding: 0 .7rem;
+    border-radius: 50%;
+}
+button.purple{
+    margin-bottom: 1rem;
+    float: right;
+    font-weight: 600;
+}
+.card{
+    padding: 1rem 5rem !important;
+}
+header *,
+div.container * {
+    z-index: 100;
+}
