@@ -25,7 +25,3 @@ button.purple{
 .card{
     padding: 1rem 5rem !important;
 }
-header *,
-div.container * {
-    z-index: 100;
-}
