@@ -1,6 +1,9 @@
-$(document).ready(function () {
-  $("#getEstimate").on("click", getEstimate);
-});
+function loaded() {
+  document.querySelector("#getEstimate").addEventListener("click", getEstimate);
+  document.querySelector("button.close").addEventListener("click", function () {
+    document.querySelector(".modal").style.display = "none";
+  });
+}
 
 function getEstimate() {
   const data = getUserData();
@@ -16,42 +19,39 @@ function getUserData(){
       avgDailyIncomeInUSD: 5,
       avgDailyIncomePopulation: 0.71,
     },
-    periodType: $("#periodType").val(),
-    timeToElapse: $("#timeToElapse").val(),
-    reportedCases: $("#reportedCases").val(),
-    population: $("#population").val(),
-    totalHospitalBeds: $("#totalHospitalBeds").val()
+    periodType: document.querySelector("#periodType").value,
+    timeToElapse: document.querySelector("#timeToElapse").value,
+    reportedCases: document.querySelector("#reportedCases").value,
+    population: document.querySelector("#population").value,
+    totalHospitalBeds: document.querySelector("#totalHospitalBeds").value
   };
 }
 
 function appendEstimates(data){
   // Append impact cases
-  $("#currentlyInfected").val(data.impact.currentlyInfected);
-  $("#infectionsByRequestedTime").val(data.impact.infectionsByRequestedTime);
-  $("#severeCasesByRequestedTime").val(data.impact.severeCasesByRequestedTime);
-  $("#hospitalBedsByRequestedTime").val(
+  document.querySelector("#currentlyInfected").value = data.impact.currentlyInfected;
+  document.querySelector("#infectionsByRequestedTime").value = data.impact.infectionsByRequestedTime;
+  document.querySelector("#severeCasesByRequestedTime").value = data.impact.severeCasesByRequestedTime;
+  document.querySelector("#hospitalBedsByRequestedTime").value = 
     data.impact.hospitalBedsByRequestedTime
-  );
-  $("#casesForICUByRequestedTime").val(data.impact.casesForICUByRequestedTime);
-  $("#casesForVentilatorsByRequestedTime").val(
+  ;
+  document.querySelector("#casesForICUByRequestedTime").value = data.impact.casesForICUByRequestedTime;
+  document.querySelector("#casesForVentilatorsByRequestedTime").value = 
     data.impact.casesForVentilatorsByRequestedTime
-  );
-  $("#dollarsInFlight").val(data.impact.dollarsInFlight);
+  ;
+  document.querySelector("#dollarsInFlight").value = data.impact.dollarsInFlight;
 
   //Append Severe impact cases
-  $("#severecurrentlyInfected").val(data.severeImpact.currentlyInfected);
-  $("#severeinfectionsByRequestedTime").val(data.severeImpact.infectionsByRequestedTime);
-  $("#severesevereCasesByRequestedTime").val(data.severeImpact.severeCasesByRequestedTime);
-  $("#severehospitalBedsByRequestedTime").val(
+  document.querySelector("#severecurrentlyInfected").value = data.severeImpact.currentlyInfected;
+  document.querySelector("#severeinfectionsByRequestedTime").value = data.severeImpact.infectionsByRequestedTime;
+  document.querySelector("#severesevereCasesByRequestedTime").value = data.severeImpact.severeCasesByRequestedTime;
+  document.querySelector("#severehospitalBedsByRequestedTime").value = 
     data.severeImpact.hospitalBedsByRequestedTime
-  );
-  $("#severecasesForICUByRequestedTime").val(data.severeImpact.casesForICUByRequestedTime);
-  $("#severecasesForVentilatorsByRequestedTime").val(
+  ;
+  document.querySelector("#severecasesForICUByRequestedTime").value = data.severeImpact.casesForICUByRequestedTime;
+  document.querySelector("#severecasesForVentilatorsByRequestedTime").value = 
     data.severeImpact.casesForVentilatorsByRequestedTime
-  );
-  $("#severedollarsInFlight").val(data.severeImpact.dollarsInFlight);
-  $(".modal").modal();
-  $("#estimationModal").modal("open");
-  $(".modal").modal();
-  $("#estimationModal").modal("open");
+  ;
+  document.querySelector("#severedollarsInFlight").value = data.severeImpact.dollarsInFlight;
+  document.querySelector(".modal").style.display = "block"; 
 }
