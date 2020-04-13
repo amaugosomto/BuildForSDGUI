@@ -25,3 +25,6 @@ button.purple{
 .card{
     padding: 1rem 5rem !important;
 }
+#tabParent{
+    margin-bottom: 2rem;
+}
